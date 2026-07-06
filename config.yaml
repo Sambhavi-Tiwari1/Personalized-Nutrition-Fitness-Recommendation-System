@@ -1,0 +1,86 @@
+# Nutrition & Fitness Recommendation System Configuration
+
+# System Settings
+system:
+  name: "Personalized Nutrition & Fitness Planner"
+  version: "1.0.0"
+  log_level: INFO
+
+# BMR Settings
+bmr:
+  equation: "mifflin_st_jeor"  # or "harris_benedict"
+  
+# TDEE Settings
+tdee:
+  activity_factors:
+    sedentary: 1.2
+    lightly_active: 1.375
+    moderately_active: 1.55
+    very_active: 1.725
+    extra_active: 1.9
+
+# Goal Adjustments (calories)
+goal_adjustments:
+  fat_loss: -500
+  maintenance: 0
+  muscle_gain: 300
+
+# Macronutrient Ranges
+macros:
+  protein:
+    min: 1.6
+    max: 2.2
+    unit: "g_per_kg"
+  fat:
+    min_percent: 0.20
+    max_percent: 0.35
+  carbs:
+    remaining: true
+
+# Meal Distribution
+meal_distribution:
+  breakfast: 0.25
+  lunch: 0.35
+  dinner: 0.30
+  snacks: 0.10
+
+# Fitness Settings
+fitness:
+  experience_levels:
+    beginner: "0-3 months"
+    intermediate: "3-12 months"
+    advanced: "12+ months"
+  
+  splits:
+    push_pull_legs:
+      days_per_week: 6
+    upper_lower:
+      days_per_week: 4
+    full_body:
+      days_per_week: 3
+
+# Food Database
+food:
+  database_path: "data/food_data.csv"
+  default_servings: 100  # grams
+
+# Exercise Database
+exercise:
+  database_path: "data/exercise_data.csv"
+  
+# Dietary Preferences
+diets:
+  - "omnivore"
+  - "vegetarian"
+  - "vegan"
+  - "keto"
+  - "mediterranean"
+  - "paleo"
+  - "gluten_free"
+
+# API Settings
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  workers: 4
